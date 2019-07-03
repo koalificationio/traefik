@@ -15,6 +15,7 @@ const (
 	annotationKubernetesAuthForwardResponseHeaders      = "ingress.kubernetes.io/auth-response-headers"
 	annotationKubernetesAuthRemoveHeader                = "ingress.kubernetes.io/auth-remove-header"
 	annotationKubernetesAuthForwardURL                  = "ingress.kubernetes.io/auth-url"
+	annotationKubernetesAuthSignInURL                   = "ingress.kubernetes.io/auth-signin"
 	annotationKubernetesAuthForwardTrustHeaders         = "ingress.kubernetes.io/auth-trust-headers"
 	annotationKubernetesAuthForwardTLSSecret            = "ingress.kubernetes.io/auth-tls-secret"
 	annotationKubernetesAuthForwardTLSInsecure          = "ingress.kubernetes.io/auth-tls-insecure"

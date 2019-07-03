@@ -933,8 +933,15 @@ func getForwardAuthConfig(i *extensionsv1beta1.Ingress, k8sClient Client) (*type
 		return nil, fmt.Errorf("forward authentication requires a url")
 	}
 
+	if len(getStringValue(i.Annotations, annotationKubernetesAuthSignInURL, "")) > 0 {
+		authSignURL := getStringValue(i.Annotations, annotationKubernetesAuthSignInURL, "")
+	}
+
+	annotationKubernetesAuthSignInURL
+
 	forwardAuth := &types.Forward{
 		Address:             authURL,
+		SignIn:              authSignURL,
 		TrustForwardHeader:  getBoolValue(i.Annotations, annotationKubernetesAuthForwardTrustHeaders, false),
 		AuthResponseHeaders: getSliceStringValue(i.Annotations, annotationKubernetesAuthForwardResponseHeaders),
 	}

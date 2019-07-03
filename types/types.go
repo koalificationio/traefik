@@ -17,7 +17,6 @@ import (
 	"github.com/containous/traefik/log"
 	traefiktls "github.com/containous/traefik/tls"
 	"github.com/mitchellh/hashstructure"
-	"github.com/ryanuber/go-glob"
 )
 
 // Backend holds backend configuration.
@@ -423,6 +422,7 @@ type Digest struct {
 // Forward authentication
 type Forward struct {
 	Address             string     `description:"Authentication server address" json:"address,omitempty"`
+	SignIn              string     `description:"Authentication server sign_in url" json:"sign_in,omitempty"`
 	TLS                 *ClientTLS `description:"Enable TLS support" json:"tls,omitempty" export:"true"`
 	TrustForwardHeader  bool       `description:"Trust X-Forwarded-* headers" json:"trustForwardHeader,omitempty" export:"true"`
 	AuthResponseHeaders []string   `description:"Headers to be forwarded from auth response" json:"authResponseHeaders,omitempty"`
